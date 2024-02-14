@@ -1,0 +1,21 @@
+.todo-add-container {
+  margin-top: 10px;
+}
+.todo-add-container input {
+  width: 60%;
+  padding: 10px;
+  margin: 10px;
+  background: linear-gradient(0deg, #152431, #152431),
+    linear-gradient(0deg, rgba(143, 168, 193, 0.5), rgba(143, 168, 193, 0.5));
+  border: 1px solid #8fa8c180;
+  border-radius: 3px;
+}
+
+.todo-add-container button {
+  width: 95px;
+  height: 40px;
+  padding: 10px;
+  border-radius: 3px;
+  border: none;
+  background: #0c5488;
+}

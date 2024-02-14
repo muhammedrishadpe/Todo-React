@@ -1,0 +1,55 @@
+.todo-list-container {
+  /* max-width: 600px; */
+  width: 100%;
+  margin-top: 50px;
+}
+
+.todo-list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-top: 10px;
+  border-bottom: dashed;
+}
+
+.todo-list .p-container {
+  width: 80%;
+  overflow-wrap: anywhere;
+}
+
+.todo-list p {
+  padding: 18px;
+  margin-left: 33px;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.todo-list .buttons {
+  width: 20%;
+}
+
+.todo-list button {
+  margin: 5px;
+  padding: 3px;
+  background-color: transparent;
+  border: none;
+  margin-left: 15px;
+  filter: invert();
+  opacity: 0.3;
+}
+
+.todo-list button:hover {
+  margin: 5px;
+  padding: 3px;
+  background-color: transparent;
+  border: none;
+  margin-left: 15px;
+  filter: invert();
+  opacity: 1;
+}
