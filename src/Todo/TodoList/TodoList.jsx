@@ -1,12 +1,16 @@
 import React, { useEffect, useState } from "react";
 import "./TodoList.css";
 import TodoEdit from "../TodoEdit/TodoEdit";
+
+
 export const TodoList = () => {
   const [clickedIndex, setClickedIndex] = useState(null);
 
   const [todosValues, setTodosValus] = useState([]);
 
   const [addInput, setAddInput] = useState("");
+
+  const [selectedIndexes, setSelectedIndexes] = useState([]);
 
   useEffect(() => {
     const storedItems = localStorage.getItem("items");
@@ -21,6 +25,10 @@ export const TodoList = () => {
 
   //Add
   const addItem = (newTodo) => {
+    if (newTodo.trim() === "") {
+      
+      return;
+    }
     setTodosValus((prevItems) => [...prevItems, newTodo]);
   };
   const onChangeValue = (event) => {
@@ -48,6 +56,14 @@ export const TodoList = () => {
     localStorage.setItem("items", JSON.stringify(updatedTodos));
   };
 
+  const toggleSelect = (index) => {
+    if (selectedIndexes.includes(index)) {
+      setSelectedIndexes(selectedIndexes.filter((i) => i !== index));
+    } else {
+      setSelectedIndexes([...selectedIndexes, index]);
+    }
+  };
+
   return (
     <div className="todo-list-container">
       <div className="todo-add-container">
@@ -71,9 +87,18 @@ export const TodoList = () => {
               onSave={(newValue) => handleEdit(index, newValue)}
             />
           ) : (
-            <div className="todo-list">
+            <div className={"todo-list"}>
               <div className="p-container">
-                <p>{data}</p>
+                <p
+                  onClick={() => toggleSelect(index)}
+                  style={{
+                    textDecorationLine: selectedIndexes.includes(index)
+                      ? "line-through"
+                      : "none",
+                  }}
+                >
+                  {data}
+                </p>
               </div>
               <div id="buttons">
                 <button onClick={() => onEdit(index)}>
