@@ -3,6 +3,8 @@ width: 100%;
 display: flex;
 justify-content: center;
 align-items: center;
+padding: 7px;
+border: 1px dotted;
 
 
 
